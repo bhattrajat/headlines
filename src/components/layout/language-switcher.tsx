@@ -1,6 +1,6 @@
 "use client";
 import { Menu } from "@headlessui/react";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useSearchParams } from "next/navigation";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { Locale, i18n } from "@/i18n-config";
@@ -23,6 +23,8 @@ export default function LanguageSwitcher() {
     }
 
     if (locale === i18n.defaultLocale) {
+      const isHomePath = segments.length === 2;
+      if (isHomePath) return "/";
       segments.splice(1, 1);
       return segments.join("/");
     }
