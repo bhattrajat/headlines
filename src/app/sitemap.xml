@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://rajat-headlines.vercel.app/</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="it"
+               href="https://rajat-headlines.vercel.app/it"/>
+    <xhtml:link
+               rel="alternate"
+               hreflang="fr"
+               href="https://rajat-headlines.vercel.app/fr"/>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="https://rajat-headlines.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://rajat-headlines.vercel.app/about</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="it"
+               href="https://rajat-headlines.vercel.app/it/about"/>
+    <xhtml:link
+               rel="alternate"
+               hreflang="fr"
+               href="https://rajat-headlines.vercel.app/fr/about"/>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="https://rajat-headlines.vercel.app/about"/>
+  </url>
+</urlset>
