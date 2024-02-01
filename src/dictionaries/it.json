@@ -10,5 +10,11 @@
     "sports": "Gli sport",
     "technology": "Tecnologia"
   },
-  "about": "Chi siamo"
+  "newsHeadlines": {
+    "noResult": "Nessun risultato di ricerca trovati per la categoria e la lingua data"
+  },
+  "about": {
+    "link": "Di",
+    "content": "pagina su di noi"
+  }
 }

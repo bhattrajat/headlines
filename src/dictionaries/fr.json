@@ -10,5 +10,11 @@
     "sports": "Des sports",
     "technology": "Technologie"
   },
-  "about": "À propos de nous"
+  "newsHeadlines": {
+    "noResult": "Aucun résultat de recherche trouvé pour la catégorie et la langue données"
+  },
+  "about": {
+    "link": "à propos",
+    "content": "Page à propos de nous"
+  }
 }

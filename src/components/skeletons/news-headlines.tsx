@@ -1,6 +1,6 @@
-import HeadlineCardSkeleton from '@/components/skeletons/headline-card';
+import HeadlineCardSkeleton from "@/components/skeletons/headline-card";
 
-export default function LoadingPage() {
+export default function NewsHeadlinesSkeleton() {
   return (
     <>
       <h1 className="text-2xl">Today&apos;s headlines</h1>

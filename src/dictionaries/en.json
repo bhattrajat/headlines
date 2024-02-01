@@ -10,5 +10,11 @@
     "sports": "Sports",
     "technology": "Technology"
   },
-  "about": "About Us"
+  "newsHeadlines": {
+    "noResult": "No search results found for given category and language"
+  },
+  "about": {
+    "link": "about",
+    "content": "About Us Page"
+  }
 }

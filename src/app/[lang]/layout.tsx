@@ -4,17 +4,33 @@ import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Locale, i18n } from "@/i18n-config";
+import { headers } from "next/headers";
+import { getAlternateLinksMetaData } from "@/utils/seo";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Headlines",
-    template: "%s | Headlines",
-  },
-  description:
-    "Latest news headlines aggregated from sources all over the world by News API",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: Locale | undefined };
+}): Promise<Metadata> {
+  const lang = params.lang ?? i18n.defaultLocale;
+  const headersList = headers();
+  const alternateLinksMetaData = getAlternateLinksMetaData({
+    host: headersList.get("host")!,
+    path: "/",
+    lang,
+  });
+  return {
+    title: {
+      default: "Headlines",
+      template: "%s | Headlines",
+    },
+    description:
+      "Latest news headlines aggregated from sources all over the world by News API",
+    ...alternateLinksMetaData,
+  };
+}
 
 export default function RootLayout({
   children,
