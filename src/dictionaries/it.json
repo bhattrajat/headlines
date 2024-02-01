@@ -1,0 +1,14 @@
+{
+  "heading": "I titoli delle notizie di oggi",
+  "footer": "Creato con Nextjs e Tailwind CSS",
+  "categories": {
+    "general": "Generale",
+    "business": "Attività commerciale",
+    "entertainment": "Divertimento",
+    "health": "Salute",
+    "science": "Scienza",
+    "sports": "Gli sport",
+    "technology": "Tecnologia"
+  },
+  "about": "Chi siamo"
+}

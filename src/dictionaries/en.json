@@ -1,0 +1,14 @@
+{
+  "heading": "Today's news headlines",
+  "footer": "Created with Next.js & Tailwind CSS",
+  "categories": {
+    "general": "General",
+    "business": "Business",
+    "entertainment": "Entertainment",
+    "health": "Health",
+    "science": "Science",
+    "sports": "Sports",
+    "technology": "Technology"
+  },
+  "about": "About Us"
+}
