@@ -1,6 +1,12 @@
 {
-  "heading": "Les titres des nouvelles d'aujourd'hui",
-  "footer": "Créé avec NextJS et Tailwind CSS",
+  "about": {
+    "link": "à propos",
+    "meta": {
+      "title": "À propos de nous",
+      "description": "Découvrez les gros titres, nos valeurs fondamentales et sur nous"
+    },
+    "content": "Page à propos de nous"
+  },
   "categories": {
     "general": "Générale",
     "business": "Entreprise",
@@ -10,22 +16,16 @@
     "sports": "Des sports",
     "technology": "Technologie"
   },
-  "title": {
-    "news": "Nouvelles"
-  },
+  "footer": "Créé avec NextJS et Tailwind CSS",
+  "heading": "Les titres des nouvelles d'aujourd'hui",
   "newsHeadlines": {
     "noResult": "Aucun résultat de recherche trouvé pour la catégorie et la langue données"
-  },
-  "about": {
-    "link": "à propos",
-    "meta": {
-      "title": "À propos de nous",
-      "description": "Découvrez les gros titres, nos valeurs fondamentales et sur nous"
-    },
-    "content": "Page à propos de nous"
   },
   "pagination": {
     "next": "Suivante",
     "previous": "Précédente"
+  },
+  "title": {
+    "news": "Nouvelles"
   }
 }

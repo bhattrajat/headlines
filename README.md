@@ -21,18 +21,18 @@ pnpm dev
 
 ### Routes
 
-- "/": It displays all news headlines by default and also provides a filter to search news for specific categories. It uses search parameters to filter by category. (Filters UI inspired from Google news / Youtube)
-- "/about": It is a simple route with just one text but it is important to test language switcher to make sure it prepends the language/locale in the route for all the non default (english) locales
+- "/:lang/:category: It displays news headlines filtered by that category. Also provides all categories link to change categories. For default language (English) and default category (general), we don't need to provide any parameters For example "/" route provides English translation with general/all categories news.
+- "/about": It is a simple route with just one text with translation based on language.
 
 ### SEO Checklist
 
-- [x] Appropriate title and description meta tags for all routes ("/" & "about")
+- [x] Appropriate title and description meta tags for all routes
 - [x] Appropriate lang attribute for html tag based on selected locale
-- [x] Customized Not found page for dynamic routes (this one was tricky 😀)
+- [x] Customized Not found page for dynamic routes.
 - [x] No prepending locale in the routes for default locale (prefer "/about" compared to "/en/about")
 - [x] Indicating alternate pages for all the supported locale via html link tags `<link rel="alternate" hreflang="lang_code"... >` & sitemap.xml. (Reference from [google](https://developers.google.com/search/docs/specialty/international/localized-versions))
 - [x] Added robots.txt
-- [x] Added favicon & open graph images
+- [x] Added favicon & open graph images.
 
 ### Language features
 
@@ -40,4 +40,4 @@ pnpm dev
 
 ### Code Quality Checklist
 
-- [x] Use Eslint, Typescript & Prettier
+- [x] Used Eslint, Typescript & Prettier

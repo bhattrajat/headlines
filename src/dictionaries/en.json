@@ -1,6 +1,12 @@
 {
-  "heading": "Today's news headlines",
-  "footer": "Created with Next.js & Tailwind CSS",
+  "about": {
+    "link": "About",
+    "meta": {
+      "title": "About Us",
+      "description": "Learn about the headlines company, Our core values and about us"
+    },
+    "content": "About Us Page"
+  },
   "categories": {
     "general": "General",
     "business": "Business",
@@ -10,22 +16,16 @@
     "sports": "Sports",
     "technology": "Technology"
   },
-  "title": {
-    "news": "News"
-  },
+  "footer": "Created with Next.js & Tailwind CSS",
+  "heading": "Today's news headlines",
   "newsHeadlines": {
     "noResult": "No search results found for given category and language"
-  },
-  "about": {
-    "link": "About",
-    "meta": {
-      "title": "About Us",
-      "description": "Learn about the headlines company, Our core values and about us"
-    },
-    "content": "About Us Page"
   },
   "pagination": {
     "next": "Next",
     "previous": "Previous"
+  },
+  "title": {
+    "news": "News"
   }
 }

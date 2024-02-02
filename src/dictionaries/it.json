@@ -1,6 +1,12 @@
 {
-  "heading": "I titoli delle notizie di oggi",
-  "footer": "Creato con Nextjs e Tailwind CSS",
+  "about": {
+    "link": "Di",
+    "meta": {
+      "title": "Chi siamo",
+      "description": "Scopri la società dei titoli, i nostri valori fondamentali e noi"
+    },
+    "content": "pagina su di noi"
+  },
   "categories": {
     "general": "Generale",
     "business": "Attività commerciale",
@@ -10,22 +16,16 @@
     "sports": "Gli sport",
     "technology": "Tecnologia"
   },
-  "title": {
-    "news": "Notizia"
-  },
+  "footer": "Creato con Nextjs e Tailwind CSS",
+  "heading": "I titoli delle notizie di oggi",
   "newsHeadlines": {
     "noResult": "Nessun risultato di ricerca trovati per la categoria e la lingua data"
-  },
-  "about": {
-    "link": "Di",
-    "meta": {
-      "title": "Chi siamo",
-      "description": "Scopri la società dei titoli, i nostri valori fondamentali e noi"
-    },
-    "content": "pagina su di noi"
   },
   "pagination": {
     "next": "Prossima",
     "previous": "Precedente"
+  },
+  "title": {
+    "news": "Notizia"
   }
 }
