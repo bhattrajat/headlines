@@ -15,7 +15,7 @@ export default async function NewsHeadlines({
   lang: Locale;
   searchParams: Record<string, string | string[] | undefined>;
 }) {
-  // await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   const currPage = Number(searchParams.page ?? DEFAULT_PAGE);
   const dictionary = await getDictionary(lang);
   const newsFeedRes = await fetch(

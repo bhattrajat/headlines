@@ -16,7 +16,7 @@ export default function Categories({
 
   const selectedCategory = params["category"]?.[0] ?? DEFAULT_CATEGORY;
   return (
-    <nav className="flex gap-2">
+    <nav className="mb-2 flex flex-wrap gap-2">
       {CATEGORIES.map((category) => (
         <LocaleLink
           locale={locale}
