@@ -4,7 +4,7 @@ import { useParams, usePathname } from "next/navigation";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { Locale, i18n } from "@/i18n-config";
-import { checkIfPathNameHasLocale } from "@/utils";
+import { checkIfPathNameHasLocale } from "@/utils/locale";
 
 export default function LanguageSwitcher() {
   const params = useParams();

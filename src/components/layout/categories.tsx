@@ -1,74 +1,34 @@
 "use client";
-import { useCallback } from "react";
-import { RadioGroup } from "@headlessui/react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { getDictionary } from "@/get-dictionary";
+import { CATEGORIES, DEFAULT_CATEGORY } from "@/constants";
+import LocaleLink from "@/components/layout/locale-link";
+import { Locale } from "@/i18n-config";
 
 export default function Categories({
+  locale,
   dictionary,
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>["categories"];
+  locale: Locale;
 }) {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
-  const selectedCategory = searchParams.get("category") ?? "general";
+  const params = useParams();
 
-  // Get a new searchParams string by merging the current
-  // searchParams with a provided key/value pair
-  const updateCategoryParam = useCallback(
-    (value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set("category", value);
-      params.delete("page");
-      return params.toString();
-    },
-    [searchParams],
-  );
-
-  const setCategory = (val: string | null) => {
-    if (val) {
-      router.push(pathname + "?" + updateCategoryParam(val));
-    }
-  };
-
-  const categories = [
-    "general",
-    "business",
-    "entertainment",
-    "health",
-    "science",
-    "sports",
-    "technology",
-  ] as const;
+  const selectedCategory = params["category"]?.[0] ?? DEFAULT_CATEGORY;
   return (
-    <RadioGroup
-      className="flex flex-wrap justify-center gap-4 p-4"
-      value={selectedCategory}
-      onChange={setCategory}
-    >
-      <RadioGroup.Label className="sr-only">
-        Filter by Category
-      </RadioGroup.Label>
-      {categories.map((category) => (
-        <RadioGroup.Option
+    <nav className="flex gap-2">
+      {CATEGORIES.map((category) => (
+        <LocaleLink
+          locale={locale}
           key={category}
-          className="cursor-pointer"
-          value={category}
+          href={category === DEFAULT_CATEGORY ? "/" : `/${category}`}
+          className={`cursor-pointer rounded px-4 py-2 font-semibold capitalize 
+          ${selectedCategory === category ? "bg-blue-600 text-white" : "bg-white text-gray-800 hover:text-black"} 
+          `}
         >
-          {({ checked }) => (
-            <span
-              className={`rounded px-4 py-2 font-semibold capitalize ${
-                checked
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-800 hover:text-black"
-              } `}
-            >
-              {dictionary[category]}
-            </span>
-          )}
-        </RadioGroup.Option>
+          {dictionary[category]}
+        </LocaleLink>
       ))}
-    </RadioGroup>
+    </nav>
   );
 }

@@ -10,11 +10,22 @@
     "sports": "Sports",
     "technology": "Technology"
   },
+  "title": {
+    "news": "News"
+  },
   "newsHeadlines": {
     "noResult": "No search results found for given category and language"
   },
   "about": {
     "link": "About",
+    "meta": {
+      "title": "About Us",
+      "description": "Learn about the headlines company, Our core values and about us"
+    },
     "content": "About Us Page"
+  },
+  "pagination": {
+    "next": "Next",
+    "previous": "Previous"
   }
 }

@@ -9,6 +9,10 @@ export const size = {
 
 export const contentType = "image/png";
 
+export const metadata = {
+  metadataBase: new URL("https://rajat-headlines.vercel.app/"),
+};
+
 // Image generation
 export default async function Image() {
   return new ImageResponse(

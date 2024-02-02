@@ -1,5 +1,5 @@
 import { i18n } from "@/i18n-config";
-import { checkIfPathNameHasLocale } from "@/utils";
+import { checkIfPathNameHasLocale } from "@/utils/locale";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { NextRequest, NextResponse } from "next/server";

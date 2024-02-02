@@ -1,22 +1,22 @@
 import Categories from "@/components/layout/categories";
 import Pagination from "@/components/layout/pagination";
-import { DEFAULT_CATEGORY, DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from "@/defaults";
+import { Category, DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from "@/constants";
 import { getDictionary } from "@/get-dictionary";
-import { Locale, i18n } from "@/i18n-config";
+import { Locale } from "@/i18n-config";
 import { Headlines } from "@/types/headlines";
 import Image from "next/image";
 
 export default async function NewsHeadlines({
-  params,
+  category,
+  lang,
   searchParams,
 }: {
-  params: { lang: Locale };
+  category: Category;
+  lang: Locale;
   searchParams: Record<string, string | string[] | undefined>;
 }) {
   // await new Promise((resolve) => setTimeout(resolve, 2000));
   const currPage = Number(searchParams.page ?? DEFAULT_PAGE);
-  const category = searchParams.category ?? DEFAULT_CATEGORY;
-  const lang = params.lang ?? i18n.defaultLocale;
   const dictionary = await getDictionary(lang);
   const newsFeedRes = await fetch(
     `https://newsapi.org/v2/top-headlines?pageSize=${DEFAULT_PAGE_SIZE}&page=${currPage}&category=${category}&language=${lang}`,
@@ -37,7 +37,7 @@ export default async function NewsHeadlines({
       {newsFeed.totalResults > 0 ? (
         <>
           <h1 className="mb-4 text-2xl">{dictionary.heading}</h1>
-          <Categories dictionary={dictionary.categories} />
+          <Categories locale={lang} dictionary={dictionary.categories} />
           <section className="grid gap-4 lg:grid-cols-3 lg:p-10">
             {newsFeed.articles.map((article, idx) => (
               <a
@@ -65,6 +65,7 @@ export default async function NewsHeadlines({
             ))}
           </section>
           <Pagination
+            dictionary={dictionary.pagination}
             currPage={currPage}
             totalResults={newsFeed.totalResults}
           />

@@ -10,11 +10,22 @@
     "sports": "Gli sport",
     "technology": "Tecnologia"
   },
+  "title": {
+    "news": "Notizia"
+  },
   "newsHeadlines": {
     "noResult": "Nessun risultato di ricerca trovati per la categoria e la lingua data"
   },
   "about": {
     "link": "Di",
+    "meta": {
+      "title": "Chi siamo",
+      "description": "Scopri la società dei titoli, i nostri valori fondamentali e noi"
+    },
     "content": "pagina su di noi"
+  },
+  "pagination": {
+    "next": "Prossima",
+    "previous": "Precedente"
   }
 }

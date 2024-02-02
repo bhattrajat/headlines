@@ -1,14 +1,20 @@
 "use client";
-import { DEFAULT_PAGE_SIZE } from "@/defaults";
+import { DEFAULT_PAGE_SIZE } from "@/constants";
+import { Dictionary } from "@/get-dictionary";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
 type Props = {
   currPage: number;
+  dictionary: Dictionary["pagination"];
   totalResults: number;
 };
 
-export default function Pagination({ totalResults, currPage }: Props) {
+export default function Pagination({
+  totalResults,
+  currPage,
+  dictionary,
+}: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -43,7 +49,7 @@ export default function Pagination({ totalResults, currPage }: Props) {
           }}
           className="rounded bg-white px-4 py-2 disabled:cursor-not-allowed"
         >
-          Previous
+          {dictionary.previous}
         </button>
         <button
           type="button"
@@ -55,7 +61,7 @@ export default function Pagination({ totalResults, currPage }: Props) {
           disabled={currPage === lastPage}
           className="rounded bg-white px-4 py-2"
         >
-          Next
+          {dictionary.next}
         </button>
       </div>
     </div>
