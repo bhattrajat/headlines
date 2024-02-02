@@ -32,6 +32,7 @@ pnpm dev
 - [x] No prepending locale in the routes for default locale (prefer "/about" compared to "/en/about")
 - [x] Indicating alternate pages for all the supported locale via html link tags `<link rel="alternate" hreflang="lang_code"... >` & sitemap.xml. (Reference from [google](https://developers.google.com/search/docs/specialty/international/localized-versions))
 - [x] Added robots.txt
+- [x] Added favicon & open graph images
 
 ### Language features
 
