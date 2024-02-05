@@ -1,6 +1,7 @@
 import Categories from "@/components/layout/categories";
 import Pagination from "@/components/layout/pagination";
 import { Category, DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from "@/constants";
+import { env } from "@/env/server.mjs";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { Headlines } from "@/types/headlines";
@@ -21,7 +22,7 @@ export default async function NewsHeadlines({
     `https://newsapi.org/v2/top-headlines?pageSize=${DEFAULT_PAGE_SIZE}&page=${currPage}&category=${category}&language=${lang}`,
     {
       headers: {
-        Authorization: process.env.API_KEY ?? "",
+        Authorization: env.API_KEY,
       },
     },
   );
