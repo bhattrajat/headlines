@@ -17,6 +17,9 @@ dependencies:
   '@t3-oss/env-nextjs':
     specifier: ^0.8.0
     version: 0.8.0(typescript@5.3.3)(zod@3.22.4)
+  holy-loader:
+    specifier: ^2.2.9
+    version: 2.2.9(react@18.2.0)
   negotiator:
     specifier: ^0.6.3
     version: 0.6.3
@@ -1789,6 +1792,14 @@ packages:
     dependencies:
       function-bind: 1.1.2
     dev: true
+
+  /holy-loader@2.2.9(react@18.2.0):
+    resolution: {integrity: sha512-n+Cg5wXkgjLM67gvuqJuMllZCYhg/5c0EeNGatEJyIoF/421Igak6MaFACSxBCQk+EY5sLT070M5LhaiBreFbw==}
+    peerDependencies:
+      react: '>= 16.0.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /ignore@5.3.0:
     resolution: {integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==}

@@ -13,6 +13,7 @@
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
     "@t3-oss/env-nextjs": "^0.8.0",
+    "holy-loader": "^2.2.9",
     "negotiator": "^0.6.3",
     "next": "14.1.0",
     "react": "^18",
