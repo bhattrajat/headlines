@@ -4,14 +4,20 @@ import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { NextRequest, NextResponse } from "next/server";
 
-const localeKeys = Object.keys(i18n.locales);
+function getLocale(request: NextRequest) {
+  const negotiatorHeaders: Record<string, string> = {};
+  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-function getLocale(request: Request) {
-  const headers = new Headers(request.headers);
-  const headersObject = Object.fromEntries(headers.entries());
-  const languages = new Negotiator({ headers: headersObject }).languages();
+  const locales = Object.keys(i18n.locales);
 
-  return match(languages, localeKeys, i18n.defaultLocale);
+  // Use negotiator and intl-localematcher to get best locale
+  const languages = new Negotiator({ headers: negotiatorHeaders }).languages(
+    locales,
+  );
+
+  const locale = match(languages, locales, i18n.defaultLocale);
+
+  return locale;
 }
 
 export function middleware(request: NextRequest) {
