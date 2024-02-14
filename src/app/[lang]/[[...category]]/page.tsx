@@ -29,7 +29,7 @@ export async function generateMetadata({
   const alternateLinksMetaData = getAlternateLinksMetaData({
     host: headersList.get("host")!,
     lang,
-    path: "/",
+    path: "",
   });
   return {
     title: `${dictionary.categories[category as Category]} News`,

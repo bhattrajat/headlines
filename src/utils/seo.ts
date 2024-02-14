@@ -16,12 +16,14 @@ export function getAlternateLinksMetaData({
   return {
     metadataBase: new URL(`${port}://${host}`),
     alternates: {
-      canonical: `${isDefaultLang ? path : `/${lang}${path}`}`,
+      canonical: `${isDefaultLang ? `/${path}` : `/${lang}${path}`}`,
       languages: Object.fromEntries([
         ...localeKeys.map((key) =>
-          key === i18n.defaultLocale ? [key, path] : [key, `/${key}${path}`],
+          key === i18n.defaultLocale
+            ? [key, `/${path}`]
+            : [key, `/${key}${path}`],
         ),
-        ["x-default", path],
+        ["x-default", `/${path}`],
       ]),
     },
   };
