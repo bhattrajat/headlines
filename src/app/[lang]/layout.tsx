@@ -6,6 +6,7 @@ import Footer from "@/components/layout/footer";
 import { Locale, i18n } from "@/i18n-config";
 import { headers } from "next/headers";
 import { getAlternateLinksMetaData } from "@/utils/seo";
+import HolyLoader from "holy-loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang={selectedLang}>
       <body className={`${inter.className}`}>
+        <HolyLoader color="rgb(37 99 235)" />
         <Header lang={selectedLang} />
         <main className="flex min-h-screen flex-col items-center justify-center bg-slate-300 p-4 pt-20 lg:px-8">
           {children}
